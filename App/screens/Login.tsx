@@ -1,18 +1,51 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import HeaderComponent from '../components/HeaderComponent';
+import {IMAGES} from '../theme/images';
+import {useNavigation} from '@react-navigation/native';
+import SCREEN from '../navigators/RouteKey';
+import TexInput from '../components/TextInput';
 
 const LoginScreen = () => {
+  const Navigation = useNavigation();
   return (
-    <View>
-      <HeaderComponent
-        title="Màn hình đăng nhập"
-        iconLeft={{
-          uri: 'https://as2.ftcdn.net/v2/jpg/02/02/93/99/1000_F_202939931_iHgLHxeBiSgNHbPvCSCdEEEtl391oRLM.jpg',
-        }}
-      />
-      <Text>{'Hello word'}</Text>
+    <View style={styles.container}>
+      <ImageBackground source={IMAGES.bgImage} style={styles.container}>
+        {/* <HeaderComponent title="Màn hình đăng nhập" iconLeft={IMAGES.icBack} /> */}
+        <View style={styles.contentStyle}> 
+          <Text style={styles.txt}>{'Đây là text 1'}</Text>
+          <TexInput/>
+          <TouchableOpacity
+            onPress={() => {
+              Navigation.navigate(SCREEN.HOME_SCREEN);
+            }}>
+            <Text style={styles.txt}>{'Submit'}</Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  txt: {
+    color: '#fff',
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  contentStyle:{
+    flex:1,
+    justifyContent:'center'
+  }
+});
 export default LoginScreen;
