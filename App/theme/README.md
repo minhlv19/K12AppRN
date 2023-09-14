@@ -1,0 +1,1 @@
+Chứa những thứ liện quan đến giao diện (màu sắc, các đường dẫn ảnh,style,.....)
