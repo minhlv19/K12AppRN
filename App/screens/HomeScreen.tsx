@@ -8,14 +8,19 @@ import {
 } from 'react-native';
 import HeaderComponent from '../components/HeaderComponent';
 import {IMAGES} from '../theme/images';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
+import SCREEN from '../navigators/RouteKey';
 
 const HomeScreen = () => {
-  const Navigation = useNavigation()
+  const Navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground source={IMAGES.bgImage} style={styles.container}>
-        <HeaderComponent title="Màn hình Trang chủ" iconLeft={IMAGES.icBack}  onPress={()=>Navigation.goBack()}/>
+        <HeaderComponent
+          title="Màn hình Trang chủ"
+          iconLeft={IMAGES.icBack}
+          onPress={() => Navigation.goBack()}
+        />
         <ScrollView>
           <Text style={styles.txt}>{'Đây là text 1'}</Text>
         </ScrollView>
