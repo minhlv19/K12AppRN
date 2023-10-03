@@ -16,7 +16,7 @@ const useLogin = () => {
   };
 
   const onSubmit = () => {
-    Navigation.navigate(SCREEN.HOME_SCREEN);
+    Navigation.navigate(SCREEN.BOTTOM_TAB);
   };
 
   return {userName, onChangeUserName, password, onChangePassword, onSubmit};

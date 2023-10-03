@@ -24,7 +24,6 @@ const LoginScreen = () => {
             iconLeft={IMAGES.icBack}
             placeholder="User Name"
             value={userName}
-            keyboardType={'numeric'}
             onChangeText={(text: string) => onChangeUserName(text)}
           />
           <TextInputComponent
